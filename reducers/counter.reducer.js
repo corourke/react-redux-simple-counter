@@ -1,11 +1,11 @@
-import * as types from '../constants/counter.const';
+export default function counterReducer(state = 0, action) {
 
-export default function CounterApp(state = 0, action) {
     switch(action.type) {
-        case types.INCREMENT:
+        case "INCREMENT":
             return state = state + 1;
-        case types.DECREMENT:
+        case "DECREMENT":
             return state = state - 1;
     }
     return state;
+
 }

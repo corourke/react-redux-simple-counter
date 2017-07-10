@@ -4,13 +4,13 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions/Counter.actions';
 
 const Counter = React.createClass({
-    displayName: 'Counter',
+    displayName: "Counter",
 
     render() {
         const { increment, decrement, count } = this.props;
         return (
             <div>
-                Current counter value: {count}
+                <h1>{count}</h1>
                 <div><button onClick={(e) => increment()}>Increment</button></div>
                 <div><button onClick={(e) => decrement()}>Decrement</button></div>
             </div>

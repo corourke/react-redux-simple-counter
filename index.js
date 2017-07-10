@@ -1,14 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
-import CounterApp from './reducers/counter.reducer';
-const store = createStore(CounterApp);
+import counterReducer from './reducers/counter.reducer';
 
-import Counter from './containers/counter';
+
+const store = createStore(counterReducer, composeWithDevTools(
+    applyMiddleware()
+));
+
+import Counter from './components/Counter';
 
 const App = React.createClass({
-    displayName: 'HOC',
+    displayName: 'App',
 
     render() {
         return (

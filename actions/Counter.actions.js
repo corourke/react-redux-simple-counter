@@ -1,13 +1,7 @@
-import * as types from '../constants/counter.const';
-
 export function increment() {
-    return {
-        type: types.INCREMENT
-    }
+    return { type: "INCREMENT" }
 }
 
 export function decrement() {
-    return {
-        type: types.DECREMENT
-    }
+    return { type: "DECREMENT" }
 }

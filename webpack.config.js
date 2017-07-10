@@ -2,41 +2,22 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './index'
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
-  resolve: {
-    alias: {
-      'redux': path.join(__dirname, 'node_modules/redux')
+    entry: './index.js',
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
     },
-    extensions: ['', '.js']
-  },
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      exclude: /node_modules/,
-      include: __dirname
-    }, {
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, '..', '..', 'src')
-    }, {
-      test: /\.css?$/,
-      loaders: ['style', 'raw'],
-      include: __dirname
-    }]
-  }
+    module: {
+        loaders: [
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['env', 'react']
+                }
+            }
+        ]
+    },
 };
