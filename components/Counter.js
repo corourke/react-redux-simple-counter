@@ -9,10 +9,12 @@ const Counter = React.createClass({
     render() {
         const { increment, decrement, count } = this.props;
         return (
-            <div>
-                <h1>{count}</h1>
-                <div><button onClick={(e) => increment()}>Increment</button></div>
-                <div><button onClick={(e) => decrement()}>Decrement</button></div>
+            <div className="box">
+                <div className="box__buttons">
+                    <button className="box__button" onClick={increment}>+</button>
+                    <button className="box__button" onClick={decrement}>-</button>
+                </div>
+                <h3 className="box__value">{count}</h3>
             </div>
         );
     }
