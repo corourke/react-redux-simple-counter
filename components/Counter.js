@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/Counter.actions';
 
-const Counter = React.createClass({
-    displayName: "Counter",
-
+class Counter extends React.Component {
     render() {
         const { increment, decrement, count } = this.props;
         return (
@@ -18,7 +16,7 @@ const Counter = React.createClass({
             </div>
         );
     }
-});
+};
 
 function mapStateToProps(state) {
     return {

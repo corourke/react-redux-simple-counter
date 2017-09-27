@@ -4,18 +4,22 @@
   "description": "Redux Simple Counter Example",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "license": "MIT",
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "jest": "^21.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
     "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",

@@ -5,15 +5,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import counterReducer from './reducers/counter.reducer';
 
+import Counter from './components/Counter';
 
 const store = createStore(counterReducer, composeWithDevTools(
     applyMiddleware()
 ));
 
-import Counter from './components/Counter';
-
-const App = React.createClass({
-    displayName: 'App',
+class App extends React.Component {
+    displayName: 'App'
 
     render() {
         return (
@@ -22,6 +21,6 @@ const App = React.createClass({
             </Provider>
         );
     }
-});
+};
 
 render(<App />, document.getElementById('root'));
